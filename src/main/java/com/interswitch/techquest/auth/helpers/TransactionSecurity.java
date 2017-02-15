@@ -108,7 +108,8 @@ public class TransactionSecurity {
         }
 
         String macData = "";
-        macBytes = Hex.decode(getMAC(macData, macDesKey, 11));
+        String mac = getMAC(macData, macDesKey, 11);
+        macBytes = Hex.decode(mac);
         footerBytes = HexConverter("5A");
 
         System.arraycopy(headerBytes, 0, secureBytes, 0, 1);
@@ -134,6 +135,7 @@ public class TransactionSecurity {
 
         secureData.put(Interswitch.SECURE, encrytedSecure);
         secureData.put(Interswitch.PINBLOCK, pinBlock);
+        secureData.put(Interswitch.MAC, mac);
 
         return secureData;
     }
@@ -178,7 +180,8 @@ public class TransactionSecurity {
         }
 
         String macData = "";
-        macBytes = Hex.decode(getMAC(macData, macDesKey, 11));
+        String mac = getMAC(macData, macDesKey, 11);
+        macBytes = Hex.decode(mac);
         footerBytes = HexConverter("5A");
 
         System.arraycopy(headerBytes, 0, secureBytes, 0, 1);
@@ -204,6 +207,7 @@ public class TransactionSecurity {
 
         secureData.put(Interswitch.SECURE, encrytedSecure);
         secureData.put(Interswitch.PINBLOCK, pinBlock);
+        secureData.put(Interswitch.MAC, mac);
 
         return secureData;
     }
@@ -248,7 +252,9 @@ public class TransactionSecurity {
         }
 
         String macData = getMACDataVersion9(transactionParameters);
-        macBytes = Hex.decode(getMAC(macData, macDesKey, 11));
+        String mac = getMAC(macData, macDesKey, 11);
+        macBytes = Hex.decode(mac);
+
         footerBytes = HexConverter("5A");
 
         System.arraycopy(headerBytes, 0, secureBytes, 0, 1);
@@ -274,6 +280,7 @@ public class TransactionSecurity {
 
         secureData.put(Interswitch.SECURE, encrytedSecure);
         secureData.put(Interswitch.PINBLOCK, pinBlock);
+        secureData.put(Interswitch.MAC, mac);
 
         return secureData;
     }
@@ -319,7 +326,8 @@ public class TransactionSecurity {
         }
 
         String macData = getMACDataVersion9(transactionParameters);
-        macBytes = Hex.decode(getMAC(macData, macDesKey, 11));
+        String mac = getMAC(macData, macDesKey, 11);
+        macBytes = Hex.decode(mac);
         footerBytes = HexConverter("5A");
 
         System.arraycopy(headerBytes, 0, secureBytes, 0, 1);
@@ -345,6 +353,7 @@ public class TransactionSecurity {
 
         secureData.put(Interswitch.SECURE, encrytedSecure);
         secureData.put(Interswitch.PINBLOCK, pinBlock);
+        secureData.put(Interswitch.MAC, mac);
 
         return secureData;
     }

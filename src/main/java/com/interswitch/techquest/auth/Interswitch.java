@@ -37,6 +37,7 @@ public class Interswitch {
 	
 	public static final String SECURE = "SECURE";
 	public static final String PINBLOCK = "PINBLOCK";
+	public static final String MAC = "MAC";
 	
 	public static final String TERMINAL_ID = "TerminalId";
 	
